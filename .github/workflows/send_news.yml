@@ -1,15 +1,16 @@
-name: 每日新闻自动推送
-# 触发条件：每天早上10点（北京时间，UTC时间0点）+ 手动触发
+name: 每日新闻自动推送（企业微信版）
+
+# 触发条件：每天北京时间10点自动运行 + 支持手动触发
 on:
   schedule:
-    - cron: "0 2 * * *"  # UTC时间0点 = 北京时间10点，可自行调整
-  workflow_dispatch:  # 支持手动运行
+    - cron: "0 2 * * *"  # UTC时间2点 = 北京时间10点，可自行调整
+  workflow_dispatch:  # 允许手动在GitHub页面触发
 
 jobs:
-  send_news:
+  send-news:
     runs-on: ubuntu-latest
     steps:
-      - name: 拉取代码
+      - name: 检出代码
         uses: actions/checkout@v5
 
       - name: 设置Python环境
@@ -22,6 +23,6 @@ jobs:
 
       - name: 运行推送脚本
         env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # 从GitHub Secrets读取WebHook，安全不泄露
+          WECHAT_WEBHOOK: ${{ secrets.WECHAT_WEBHOOK }}
         run: python news_sender.py
