@@ -3,7 +3,8 @@ import os
 
 def get_news_data():
     """获取新闻数据（完全适配你的API）"""
-    url = "http://excerpt.rubaoo.com/toolman/getMiniNews?"
+    #url = "http://excerpt.rubaoo.com/toolman/getMiniNews?"
+    url = "https://60s.viki.moe/v2/60s?encoding=text"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.6031.113 Safari/537.36"
     }
