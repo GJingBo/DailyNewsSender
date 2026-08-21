@@ -6,7 +6,7 @@ def get_news_data():
     """获取新闻数据（使用默认JSON格式）"""
     url = "https://60s.viki.moe/v2/60s"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.6031.113 Safari/537.36"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
     }
     try:
         response = requests.get(url, headers=headers, timeout=20)
