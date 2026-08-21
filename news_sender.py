@@ -4,7 +4,8 @@ import re
 
 def get_news_data():
     """获取新闻数据（使用默认JSON格式）"""
-    url = "https://60s.viki.moe/v2/60s"
+    #url = "https://60s.viki.moe/v2/60s"
+    url = "http://excerpt.rubaoo.com/toolman/getMiniNews?"
     headers = {
         "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
     }
